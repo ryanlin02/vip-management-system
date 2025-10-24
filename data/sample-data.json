@@ -1,0 +1,204 @@
+{
+  "vips": [
+    {
+      "lastName": "黃",
+      "firstName": "敏惠",
+      "mainTitle": "市長",
+      "mainOrganization": "嘉義市政府",
+      "gender": "女",
+      "otherTitles": ["博士"],
+      "introduction": "嘉義市第10屆市長，致力於推動城市發展與市民福祉，積極推動智慧城市建設與產業轉型。",
+      "photoUrl": "",
+      "tags": ["市府首長", "VIP", "重要貴賓"],
+      "introducedRecords": [
+        {
+          "date": "2024-08-15",
+          "event": "嘉義市112年度市政成果發表會"
+        },
+        {
+          "date": "2024-10-10",
+          "event": "國慶日升旗典禮"
+        },
+        {
+          "date": "2025-01-20",
+          "event": "嘉義市113年度春節團拜活動"
+        }
+      ]
+    },
+    {
+      "lastName": "李",
+      "firstName": "銘順",
+      "mainTitle": "副市長",
+      "mainOrganization": "嘉義市政府",
+      "gender": "男",
+      "otherTitles": [],
+      "introduction": "嘉義市政府副市長，協助市長處理市政事務，專責產業發展與招商引資。",
+      "photoUrl": "",
+      "tags": ["市府首長", "重要貴賓"],
+      "introducedRecords": [
+        {
+          "date": "2024-09-05",
+          "event": "嘉義市產業發展論壇"
+        },
+        {
+          "date": "2025-02-28",
+          "event": "和平紀念日紀念活動"
+        }
+      ]
+    },
+    {
+      "lastName": "林",
+      "firstName": "青萍",
+      "mainTitle": "秘書長",
+      "mainOrganization": "嘉義市政府",
+      "gender": "女",
+      "otherTitles": [],
+      "introduction": "嘉義市政府秘書長，負責綜合規劃及督導考核業務，統籌各局處行政協調工作。",
+      "photoUrl": "",
+      "tags": ["市府主管"],
+      "introducedRecords": []
+    },
+    {
+      "lastName": "張",
+      "firstName": "志成",
+      "mainTitle": "民政處長",
+      "mainOrganization": "嘉義市政府民政處",
+      "gender": "男",
+      "otherTitles": [],
+      "introduction": "負責民政業務，包括戶政、地政及宗教禮俗等事務，推動社區營造與地方發展。",
+      "photoUrl": "",
+      "tags": ["市府主管"],
+      "introducedRecords": [
+        {
+          "date": "2024-07-20",
+          "event": "嘉義市社區營造成果展"
+        }
+      ]
+    },
+    {
+      "lastName": "陳",
+      "firstName": "淑芬",
+      "mainTitle": "社會處長",
+      "mainOrganization": "嘉義市政府社會處",
+      "gender": "女",
+      "otherTitles": ["社工師"],
+      "introduction": "負責社會福利、社會救助及婦女福利等業務，致力於弱勢族群照顧與權益保障。",
+      "photoUrl": "",
+      "tags": ["市府主管", "社福專業"],
+      "introducedRecords": [
+        {
+          "date": "2024-12-25",
+          "event": "嘉義市溫馨送暖聖誕活動"
+        },
+        {
+          "date": "2025-03-08",
+          "event": "婦女節慶祝大會"
+        }
+      ]
+    },
+    {
+      "lastName": "王",
+      "firstName": "建國",
+      "mainTitle": "財政處長",
+      "mainOrganization": "嘉義市政府財政處",
+      "gender": "男",
+      "otherTitles": ["會計師"],
+      "introduction": "負責市府財政規劃、預算編列及公產管理等業務，確保財政健全與資源有效運用。",
+      "photoUrl": "",
+      "tags": ["市府主管", "財政專業"],
+      "introducedRecords": []
+    },
+    {
+      "lastName": "吳",
+      "firstName": "文華",
+      "mainTitle": "教育處長",
+      "mainOrganization": "嘉義市政府教育處",
+      "gender": "女",
+      "otherTitles": ["博士"],
+      "introduction": "負責教育政策規劃、學校管理及體育推廣等業務，推動雙語教育與創新教學。",
+      "photoUrl": "",
+      "tags": ["市府主管", "教育專業"],
+      "introducedRecords": [
+        {
+          "date": "2024-11-15",
+          "event": "嘉義市教育創新論壇"
+        }
+      ]
+    },
+    {
+      "lastName": "劉",
+      "firstName": "世雄",
+      "mainTitle": "工務處長",
+      "mainOrganization": "嘉義市政府工務處",
+      "gender": "男",
+      "otherTitles": ["建築師"],
+      "introduction": "負責都市計畫、建築管理及工程建設等業務，推動城市建設與公共工程品質提升。",
+      "photoUrl": "",
+      "tags": ["市府主管", "工程專業"],
+      "introducedRecords": []
+    },
+    {
+      "lastName": "周",
+      "firstName": "俊男",
+      "mainTitle": "文化局長",
+      "mainOrganization": "嘉義市政府文化局",
+      "gender": "男",
+      "otherTitles": ["博士"],
+      "introduction": "負責文化資產保存、藝文推廣及圖書館管理等業務，推動嘉義市文化藝術發展。",
+      "photoUrl": "",
+      "tags": ["市府主管", "文化專業"],
+      "introducedRecords": [
+        {
+          "date": "2024-06-10",
+          "event": "嘉義市藝術節開幕典禮"
+        }
+      ]
+    },
+    {
+      "lastName": "楊",
+      "firstName": "芳玲",
+      "mainTitle": "環境保護局長",
+      "mainOrganization": "嘉義市政府環境保護局",
+      "gender": "女",
+      "otherTitles": ["環境工程師"],
+      "introduction": "負責環境保護、清潔衛生及垃圾處理等業務，推動綠色城市與環境永續發展。",
+      "photoUrl": "",
+      "tags": ["市府主管", "環保專業"],
+      "introducedRecords": []
+    }
+  ],
+  "活動資訊說明": "以下是5場活動的詳細資訊，部分已在貴賓的介紹紀錄中使用",
+  "activities": [
+    {
+      "name": "嘉義市社區營造成果展",
+      "date": "2024-07-20",
+      "status": "已過期",
+      "description": "展示嘉義市各社區營造成果，促進社區交流"
+    },
+    {
+      "name": "嘉義市112年度市政成果發表會",
+      "date": "2024-08-15",
+      "status": "已過期",
+      "description": "發表112年度市政推動成果，展望未來發展方向"
+    },
+    {
+      "name": "嘉義市113年度春節團拜活動",
+      "date": "2025-01-20",
+      "status": "即將舉辦",
+      "description": "春節團拜活動，凝聚市府團隊向心力"
+    },
+    {
+      "name": "和平紀念日紀念活動",
+      "date": "2025-02-28",
+      "status": "即將舉辦",
+      "description": "和平紀念日紀念儀式，緬懷歷史"
+    },
+    {
+      "name": "婦女節慶祝大會",
+      "date": "2025-03-08",
+      "status": "即將舉辦",
+      "description": "慶祝婦女節，表揚傑出婦女貢獻"
+    }
+  ],
+  "使用說明": "此為範例資料，包含10位嘉義市政府長官資訊及5場活動資訊（2場已過期，3場即將舉辦）。您可以透過網站的「大量上傳」功能使用 sample-upload.csv 檔案快速匯入資料。"
+}

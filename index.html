@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>貴賓資料庫管理系統</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 導航列 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-title">貴賓資料庫</h1>
+            <div class="nav-buttons">
+                <button class="nav-btn active" data-page="vip-list">貴賓</button>
+                <button class="nav-btn" data-page="search">搜尋</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要內容區域 -->
+    <main class="main-content">
+        <!-- 貴賓列表頁面 -->
+        <section id="vip-list-page" class="page active">
+            <div class="page-header">
+                <div class="action-buttons">
+                    <button class="btn btn-primary" id="add-vip-btn">新增</button>
+                    <button class="btn btn-secondary" id="toggle-select-btn">選取</button>
+                    <button class="btn btn-secondary" id="bulk-upload-btn">大量上傳</button>
+                </div>
+                <div class="select-actions" id="select-actions" style="display: none;">
+                    <button class="btn btn-secondary" id="edit-tags-btn">編輯標籤</button>
+                    <button class="btn btn-secondary" id="cancel-select-btn">取消選取</button>
+                    <span class="select-count" id="select-count">已選取 0 位</span>
+                </div>
+            </div>
+
+            <div class="vip-grid" id="vip-grid">
+                <!-- 貴賓卡片將動態生成 -->
+                <div class="loading">載入中...</div>
+            </div>
+        </section>
+
+        <!-- 搜尋頁面 -->
+        <section id="search-page" class="page">
+            <div class="search-container">
+                <h2 class="section-title">搜尋貴賓</h2>
+
+                <div class="search-form">
+                    <div class="form-group">
+                        <label for="search-keyword">關鍵字</label>
+                        <input type="text" id="search-keyword" placeholder="搜尋姓名、稱謂、單位...">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="search-gender">性別</label>
+                            <select id="search-gender">
+                                <option value="">全部</option>
+                                <option value="男">男</option>
+                                <option value="女">女</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="search-organization">單位</label>
+                            <input type="text" id="search-organization" placeholder="輸入單位名稱">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="search-tags">標籤</label>
+                        <input type="text" id="search-tags" placeholder="輸入標籤（多個標籤以逗號分隔）">
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn btn-primary" id="search-btn">搜尋</button>
+                        <button class="btn btn-secondary" id="reset-search-btn">重置</button>
+                    </div>
+                </div>
+
+                <div class="search-results" id="search-results" style="display: none;">
+                    <h3 class="section-subtitle">搜尋結果 (<span id="result-count">0</span>)</h3>
+                    <div class="vip-grid" id="search-grid">
+                        <!-- 搜尋結果將動態生成 -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 新增/編輯貴賓模態框 -->
+    <div class="modal" id="vip-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-title">新增貴賓</h2>
+                <button class="modal-close" id="close-modal">&times;</button>
+            </div>
+
+            <form class="vip-form" id="vip-form">
+                <input type="hidden" id="vip-id">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="lastName">姓氏 <span class="required">*</span></label>
+                        <input type="text" id="lastName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstName">姓名 <span class="required">*</span></label>
+                        <input type="text" id="firstName" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="mainTitle">主要稱謂 <span class="required">*</span></label>
+                        <input type="text" id="mainTitle" required placeholder="例：市長、處長、科長">
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">性別 <span class="required">*</span></label>
+                        <select id="gender" required>
+                            <option value="">請選擇</option>
+                            <option value="男">男</option>
+                            <option value="女">女</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="mainOrganization">主要單位 <span class="required">*</span></label>
+                    <input type="text" id="mainOrganization" required placeholder="例：嘉義市政府">
+                </div>
+
+                <div class="form-group">
+                    <label for="otherTitles">其他頭銜</label>
+                    <input type="text" id="otherTitles" placeholder="多個頭銜以逗號分隔">
+                </div>
+
+                <div class="form-group">
+                    <label for="photoUrl">照片網址</label>
+                    <input type="url" id="photoUrl" placeholder="https://example.com/photo.jpg">
+                </div>
+
+                <div class="form-group">
+                    <label for="tags">標籤</label>
+                    <input type="text" id="tags" placeholder="多個標籤以逗號分隔">
+                </div>
+
+                <div class="form-group">
+                    <label for="introduction">貴賓介紹</label>
+                    <textarea id="introduction" rows="3" placeholder="簡短介紹貴賓背景..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>介紹紀錄</label>
+                    <div id="records-container">
+                        <!-- 介紹紀錄將動態生成 -->
+                    </div>
+                    <button type="button" class="btn btn-secondary btn-small" id="add-record-btn">新增紀錄</button>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">儲存</button>
+                    <button type="button" class="btn btn-secondary" id="cancel-form-btn">取消</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 大量上傳模態框 -->
+    <div class="modal" id="bulk-upload-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">大量上傳貴賓資料</h2>
+                <button class="modal-close" id="close-bulk-modal">&times;</button>
+            </div>
+
+            <div class="bulk-upload-content">
+                <div class="upload-instructions">
+                    <h3>上傳說明</h3>
+                    <p>請上傳符合格式的 CSV 檔案，檔案格式如下：</p>
+                    <code>姓氏,姓名,主要稱謂,主要單位,性別,其他頭銜,貴賓介紹,照片URL,標籤</code>
+                    <p class="note">註：標籤與其他頭銜請使用分號(;)分隔多個項目</p>
+                    <a href="data/sample-upload.csv" download class="download-link">下載範例檔案</a>
+                </div>
+
+                <div class="upload-area">
+                    <input type="file" id="csv-file-input" accept=".csv" style="display: none;">
+                    <button class="btn btn-primary" id="select-file-btn">選擇 CSV 檔案</button>
+                    <p class="file-name" id="file-name"></p>
+                </div>
+
+                <div class="form-actions">
+                    <button class="btn btn-primary" id="upload-csv-btn" disabled>上傳</button>
+                    <button class="btn btn-secondary" id="cancel-bulk-btn">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 批量編輯標籤模態框 -->
+    <div class="modal" id="edit-tags-modal">
+        <div class="modal-content modal-small">
+            <div class="modal-header">
+                <h2 class="modal-title">批量編輯標籤</h2>
+                <button class="modal-close" id="close-tags-modal">&times;</button>
+            </div>
+
+            <div class="tags-edit-content">
+                <p>已選取 <strong><span id="selected-count">0</span></strong> 位貴賓</p>
+
+                <div class="form-group">
+                    <label for="bulk-tags-input">標籤</label>
+                    <input type="text" id="bulk-tags-input" placeholder="輸入標籤，多個標籤以逗號分隔">
+                    <p class="note">此操作會覆蓋所有選取貴賓的標籤</p>
+                </div>
+
+                <div class="form-actions">
+                    <button class="btn btn-primary" id="save-bulk-tags-btn">儲存</button>
+                    <button class="btn btn-secondary" id="cancel-tags-btn">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+    <!-- 應用程式腳本 -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/ui.js"></script>
+</body>
+</html>
